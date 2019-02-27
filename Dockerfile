@@ -17,6 +17,7 @@ RUN apt-get update && apt-get install -y \
     zip \
     libzip-dev \
     jpegoptim optipng pngquant gifsicle \
+    nano \
     vim \
     unzip \
     git \

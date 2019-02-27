@@ -42,11 +42,11 @@ services:
     restart: unless-stopped
     tty: true
     ports:
-      - "3307:3307"
+      - "3306:3306"
     environment:
       MYSQL_DATABASE: laravel
-      MYSQL_ROOT_PASSWORD: your_mysql_root_password
-      SERVICE_TAGS: dev
+      MYSQL_ROOT_PASSWORD: tim
+      SERVICE_TAGS: dev 
       SERVICE_NAME: mysql
     volumes:
       - dbdata:/var/lib/mysql/
