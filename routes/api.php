@@ -27,8 +27,10 @@ Route::delete('events/{eventId}', 'EventsController@delete');
 Route::post('login', 'PassportController@login');
 Route::post('register', 'PassportController@register');
  
+Route::get('init', function() {
+    $exitCode = Artisan::call('passport:install');
+});
+
 Route::middleware('auth:api')->group(function () {
     Route::get('user', 'PassportController@details');
- 
-    Route::resource('products', 'ProductController');
 });
