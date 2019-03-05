@@ -16,14 +16,12 @@ class PassportController extends Controller
     public function register(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|min:3',
-            'email' => 'required|email|unique:users',
+            'pseudo' => 'required',
             'password' => 'required|min:6',
         ]);
  
         $user = User::create([
-            'name' => $request->name,
-            'email' => $request->email,
+            'pseudo' => $request->pseudo,
             'password' => bcrypt($request->password)
         ]);
  
@@ -41,7 +39,7 @@ class PassportController extends Controller
     public function login(Request $request)
     {
         $credentials = [
-            'email' => $request->email,
+            'pseudo' => $request->pseudo,
             'password' => $request->password
         ];
  
