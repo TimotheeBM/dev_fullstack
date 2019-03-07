@@ -29,7 +29,7 @@ class LocationsController extends Controller
         $location->update($request->all());
         return response()->json($location, 200);
     }
- 
+
     public function delete(int $locationId)
     {
         $location = Location::find($locationId);
