@@ -27,7 +27,6 @@ class MessagesController extends Controller
     public function update(Request $request, Message $message)
     {
         $message->update($request->all());
- 
         return response()->json($message, 200);
     }
  
