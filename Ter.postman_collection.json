@@ -1,0 +1,599 @@
+{
+	"info": {
+		"_postman_id": "a9ad91cb-0601-4ede-8890-b07e23ff77a8",
+		"name": "Ter",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authentification",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pseudo\" : \"\",\n\t\"password\" : \"\"\n}"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/register",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pseudo\" : \"\",\n\t\"password\" : \"\"\n}"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/login",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/users/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Users",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/users",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"pseudo\" : \"\",\n\t\"password\" : \"\"\n}"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/users/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete User",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/users/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"users",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Event",
+			"item": [
+				{
+					"name": "Create Event",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"creator\" : \"\",\n\t\"title\" : \"\",\n\t\"description\" : \"\",\n\t\"date_creation\" : \"\",\n\t\"date_event\" : \"\",\n\t\"location\" : \"\" \n}"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/events",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Event",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/events/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Events",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/events",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Event",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"creator\" : \"\",\n\t\"title\" : \"\",\n\t\"description\" : \"\",\n\t\"date_creation\" : \"\",\n\t\"date_event\" : \"\",\n\t\"location\" : \"\" \n}"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/events",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"events"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Event",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/events/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"events",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Location",
+			"item": [
+				{
+					"name": "Create Location",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"\",\n\t\"latitude\" : \"\",\n\t\"longitude\" : \"\"\n}\t"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/locations",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Location",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/locations/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"locations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Locations",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/locations",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Location",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"name\" : \"\",\n\t\"latitude\" : \"\",\n\t\"longitude\" : \"\"\n}\t"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/locations",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"locations"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Location",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/locations/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"locations",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Message",
+			"item": [
+				{
+					"name": "Create Message",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"name": "Content-Type",
+								"type": "text",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"user\" : \"\",\n\t\"event\" : \"\",\n\t\"date\" : \"\",\n\t\"message\" : \"\"\n}"
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/messages",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Message",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/messages/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All Messages",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/messages",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"messages"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Message",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://fullstackter.alwaysdata.net/api/messages/1",
+							"protocol": "http",
+							"host": [
+								"fullstackter",
+								"alwaysdata",
+								"net"
+							],
+							"path": [
+								"api",
+								"messages",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
