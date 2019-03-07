@@ -20,9 +20,11 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('events', 'EventsController@index');
 Route::get('events/{eventId}', 'EventsController@show');
-Route::post('events','EventsController@store');
-Route::put('events/{events}','EventsController@update');
+Route::post('events', 'EventsController@store');
+Route::put('events/{events}', 'EventsController@update');
 Route::delete('events/{eventId}', 'EventsController@delete');
+Route::get('messages', 'MessagesController@index')
+Route::get('messages/{messageId}', 'MessagesController@show')
 
 Route::post('login', 'PassportController@login');
 Route::post('register', 'PassportController@register');
