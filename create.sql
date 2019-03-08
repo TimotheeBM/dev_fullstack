@@ -29,11 +29,11 @@ create table if not exists events (
 );
 
 create table if not exists messages (
+    id int auto_increment,
     user_id int,
     event_id int,
-    date date,
     message text,
-    PRIMARY KEY (user_id, event_id, date),
+    PRIMARY KEY (id),
     CONSTRAINT fk_message_user FOREIGN KEY (user_id) REFERENCES Users(user_id),
     CONSTRAINT fk_message_event FOREIGN KEY (event_id) REFERENCES Events(event_id)
 );
