@@ -29,7 +29,7 @@ class UsersController extends Controller
         $user->update($request->all());
         return response()->json($user, 200);
     }
- 
+
     public function delete(int $userId)
     {
         $user = User::find($userId);

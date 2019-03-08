@@ -27,10 +27,9 @@ class EventsController extends Controller
     public function update(Request $request, Event $event)
     {
         $event->update($request->all());
- 
         return response()->json($event, 200);
     }
- 
+
     public function delete(int $eventId)
     {
         $event = Event::find($eventId);
