@@ -23,6 +23,7 @@ Route::get('events/{event}', 'EventsController@show');
 Route::post('events', 'EventsController@store');
 Route::put('events/{event}', 'EventsController@update');
 Route::delete('events/{event}', 'EventsController@delete');
+Route::get('events/{latitude}/{longitude}/{radius}', 'EventsController@byArea');
 
 Route::get('messages', 'MessagesController@index');
 Route::get('messages/{message}', 'MessagesController@show');
