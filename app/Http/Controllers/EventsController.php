@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Event;
 
@@ -41,15 +42,15 @@ class EventsController extends Controller
 
     public function byArea(float $latitude, float $longitude, int $radius)
     {
-        if ($radius <= 0)   
+        if ($radius < 0)   
             return response()->json(null, 200);
         
-        $query = 'SELECT *, (6371 * acos(cos(radians(:lat)) * cos(radians(latitude)) * cos(radians(longitude) - radians(:long)) + sin(radians(:lat)) * sin(radians(lat)))) AS distance 
-                    FROM Events
+        $query = 'SELECT *, (6371 * acos(cos(radians(:lat)) * cos(radians(latitude)) * cos(radians(longitude) - radians(:long)) + sin(radians(:lat2)) * sin(radians(latitude)))) AS distance 
+                    FROM events
                     HAVING distance < :radius 
                     ORDER BY distance;';
         
-        $results = DB::select(query, ['lat' => $latitude, 'long' => $longitude, 'radius' => $radius]);
+        $results = DB::select($query, ['lat' => $latitude, 'lat2' => $latitude, 'long' => $longitude, 'radius' => $radius]);
         
         return response()->json($results, 200);
     }           
