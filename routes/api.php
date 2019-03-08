@@ -37,12 +37,6 @@ Route::get('users', 'UsersController@index');
 Route::get('users/{user}', 'UsersController@show');
 Route::put('users/{user}', 'UsersController@update');
 Route::delete('users/{user}', 'UsersController@delete');
-
-Route::get('locations', 'LocationsController@index');
-Route::get('locations/{location}', 'LocationsController@show');
-Route::post('locations', 'LocationsController@store');
-Route::put('locations/{location}', 'LocationsController@update');
-Route::delete('locations/{location}', 'LocationsController@delete');
  
 Route::get('init', function() {
     $exitCode = Artisan::call('passport:install');
