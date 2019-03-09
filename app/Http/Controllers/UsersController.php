@@ -26,7 +26,10 @@ class UsersController extends Controller
  
     public function update(Request $request, User $user)
     {
-        $user->update($request->all());
+        $user->update([
+            'pseudo' => $request->pseudo,
+            'password' => bcrypt($request->password)
+        ]);
         return response()->json($user, 200);
     }
 
