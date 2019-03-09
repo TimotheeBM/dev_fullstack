@@ -40,9 +40,9 @@ class EventsController extends Controller
         return response()->json(null, 204);
     }
 
-    public function byArea(float $latitude, float $longitude, int $radius)
+    public function byArea(Request $request)
     {
-        if ($radius < 0)   
+        if ($request->radius < 0)   
             return response()->json(null, 200);
         
         $query = 'SELECT *, (6371 * acos(cos(radians(:lat)) * cos(radians(latitude)) * cos(radians(longitude) - radians(:long)) + sin(radians(:lat2)) * sin(radians(latitude)))) AS distance 
@@ -50,7 +50,7 @@ class EventsController extends Controller
                     HAVING distance < :radius 
                     ORDER BY distance;';
         
-        $results = DB::select($query, ['lat' => $latitude, 'lat2' => $latitude, 'long' => $longitude, 'radius' => $radius]);
+        $results = DB::select($query, ['lat' => $request->latitude, 'lat2' => $request->latitude, 'long' => $request->longitude, 'radius' => $request->radius]);
         
         return response()->json($results, 200);
     }           

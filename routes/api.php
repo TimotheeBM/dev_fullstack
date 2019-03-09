@@ -18,12 +18,12 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 */
 
-Route::get('events', 'EventsController@index');
+//Route::get('events', 'EventsController@index');
 Route::get('events/{event}', 'EventsController@show');
 Route::post('events', 'EventsController@store');
 Route::put('events/{event}', 'EventsController@update');
 Route::delete('events/{event}', 'EventsController@delete');
-Route::get('events/{latitude}/{longitude}/{radius}', 'EventsController@byArea');
+Route::get('events', 'EventsController@byArea');
 
 Route::get('messages', 'MessagesController@showMessagesForParams');
 Route::get('messages/{message}', 'MessagesController@show');
