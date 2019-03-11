@@ -42,6 +42,9 @@ class EventsController extends Controller
 
     public function byArea(Request $request)
     {
+        if (!$request->radius || !$request->longitude || !$request->latitude)
+            return Event::all();
+
         if ($request->radius < 0)   
             return response()->json(null, 200);
         
