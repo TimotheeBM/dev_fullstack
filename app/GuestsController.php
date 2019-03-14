@@ -30,9 +30,9 @@ class GuestsController extends Controller
         return response()->json($guest, 200);
     }
  
-    public function delete(int $guestId)
+    public function delete(Guest $guestId)
     {
-        $guest = Guest::find($guestId);
+        $guest = Event::find($guestId);
         if (!empty($guest))
             $guest->delete();
  
