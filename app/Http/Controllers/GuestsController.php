@@ -30,21 +30,20 @@ class GuestsController extends Controller
         return response()->json($guest, 200);
     }
  
-    public function delete(Guest $guestId)
+    public function delete(int $guestId)
     {
-        $guest = Event::find($guestId);
+        $guest = Guest::find($guestId);
         if (!empty($guest))
             $guest->delete();
  
         return response()->json(null, 204);
     }
-
-    public function showGuestsForParams(Request $request, int eventId) {
+    
+    public function showGuestsForParams(Request $request, int $eventId) {
 		if ($request->user)
-			$guests = Guest::where('user', $request->user)->where('event', eventId)->get();
+			$guests = Guest::where('user', $request->user)->where('event', $eventId)->get();
         else
-			$guests = Guest::where('event', eventId);
-		}
+			$guests = Guest::where('event', $eventId)->get();
 		return $guests;
 	}
 }

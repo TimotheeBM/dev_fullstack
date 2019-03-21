@@ -30,7 +30,7 @@ Route::get('messages/{message}', 'MessagesController@show');
 Route::post('messages', 'MessagesController@store');
 Route::delete('messages/{message}', 'MessagesController@delete');
 
-Route::get('guests/{eventId}', 'GuestsController@showMessagesForParams');
+Route::get('guests/{eventId}', 'GuestsController@showGuestsForParams');
 Route::post('guests', 'GuestsController@store');
 Route::delete('guests/{guests}', 'GuestsController@delete');
 
