@@ -44,7 +44,7 @@ class EventsController extends Controller
     {
         if (!$request->radius || !$request->longitude || !$request->latitude) {
             $query = 'SELECT e.id, creator, title, description, e.created_at, e.updated_at, date_event, location_name, longitude, latitude, COUNT(g.user) as guests_number
-                FROM events as e, guests as g
+                FROM events as e
                 LEFT JOIN guests as g ON e.id = g.event
                 GROUP BY e.id, creator, title, description, e.created_at, e.updated_at, date_event, location_name, longitude, latitude;';
             $results = DB::select($query);
