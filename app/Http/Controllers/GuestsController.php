@@ -41,9 +41,18 @@ class GuestsController extends Controller
     
     public function showGuestsForParams(Request $request, int $eventId) {
 		if ($request->user)
-			$guests = Guest::where('user', $request->user)->where('event', $eventId)->get();
+            $guests = Guest::where('user', $request->user)
+                ->where('event', $eventId)
+                ->join('users', 'users.id', '=', 'user')
+                ->join('events', 'events.id', '=', 'event')
+                ->select('guests.id', 'user', 'event', 'title', 'location_name', 'latitude', 'longitude', 'pseudo')
+                ->get();
         else
-			$guests = Guest::where('event', $eventId)->get();
+            $guests = Guest::where('event', $eventId)
+            ->join('users', 'users.id', '=', 'user')
+            ->join('events', 'events.id', '=', 'event')
+            ->select('guests.id', 'user', 'event', 'title', 'location_name', 'latitude', 'longitude', 'pseudo')
+            ->get();
 		return $guests;
 	}
 }
