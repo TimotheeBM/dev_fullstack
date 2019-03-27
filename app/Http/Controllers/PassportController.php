@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -15,11 +16,15 @@ class PassportController extends Controller
      */
     public function register(Request $request)
     {
-        $this->validate($request, [
-            'pseudo' => 'required',
+        $validator = Validator::make($request->all(), [
+            'pseudo' => 'required|unique:users',
             'password' => 'required|min:6',
         ]);
- 
+
+        if ($validator->fails()) {
+            return response()->json(['register' => 'user already exists']);
+        }
+      
         $user = User::create([
             'pseudo' => $request->pseudo,
             'password' => bcrypt($request->password)
